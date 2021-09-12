@@ -14,7 +14,16 @@ import { NotImplementedError } from '../extensions/index.js';
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-export default function isMAC48Address(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function isMAC48Address( n ) {
+  var hexidec = '0123456789ABCDEF'
+  
+  var splitted = n.split('-');
+  for (var i = 0; i < n.length;n++){
+    for (var v = 0; v < n[i].length; v++){
+      if(hexidec.includes(splitted[v][i])){
+        return true
+      }
+      return false
+    }
+  }
 }
